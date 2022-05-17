@@ -2,7 +2,7 @@ import Button from "./Button";
 const operators = ["+", "-", "*", "/", "="];
 function Operators({updateOperator, updateResults}) {
     function handleAddition(evt){
-        updateOperator();
+        updateOperator("+");
     }
     function handleExecute(evt){
         updateResults();
