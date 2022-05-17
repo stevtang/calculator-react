@@ -6,8 +6,8 @@ function Display({ operator, firstNum, secondNum, result }) {
 
   return (
     <div className="Display">
-      {+firstNum} {operator !== null && operator} {+secondNum}
-      {firstNum === "0" && secondNum === "0" && operator === null && (+result)}
+      {firstNum} {operator !== null && operator} {secondNum}
+      {firstNum === "" && secondNum === "" && operator === null && (result)}
     </div>
   );
 }

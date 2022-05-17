@@ -5,16 +5,16 @@ import Numbers from './Numbers';
 import Display from './Display';
 
 function App() {
-  const [firstNum, setFirstNum] = useState("0");
-  const [secondNum, setSecondNum] = useState("0");
+  const [firstNum, setFirstNum] = useState("");
+  const [secondNum, setSecondNum] = useState("");
   const [operator, setOperator] = useState(null);
   const [result, setResult] = useState(0);
 
   function updateResults(){
     setResult(Number(firstNum) + Number(secondNum));
     setOperator(null);
-    setFirstNum("0");
-    setSecondNum("0");
+    setFirstNum("");
+    setSecondNum("");
   }
 
   function updateOperator(operation){
