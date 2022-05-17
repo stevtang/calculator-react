@@ -1,6 +1,8 @@
 import './App.css';
 import {useState} from 'react';
 import Operators from './Operators';
+import Numbers from './Numbers';
+import Display from './Display';
 
 function App() {
   const [firstNum, setFirstNum] = useState("0");
@@ -11,6 +13,8 @@ function App() {
   function updateResults(){
     setResult(Number(firstNum) + Number(secondNum));
     setOperator(null);
+    setFirstNum("0");
+    setSecondNum("0");
   }
 
   function updateOperator(operation){
@@ -18,11 +22,12 @@ function App() {
   }
 
   function updateNum(num) {
-    let newNum = firstNum.concat(num.toString());
+    let newFirstNum = firstNum.concat(num.toString());
+    let newSecondNum = secondNum.concat(num.toString());
     if (operator === null) {
-      setFirstNum(newNum);    
+      setFirstNum(newFirstNum);    
     } else {
-      setSecondNum(newNum);
+      setSecondNum(newSecondNum);
     }
   }
   
@@ -30,6 +35,7 @@ function App() {
     <div className="App">
       <Operators updateOperator={updateOperator} updateResults={updateResults}/>
       <Numbers updateNum={updateNum} />
+      <Display operator={operator} firstNum={firstNum} secondNum={secondNum} result={result}/>
     </div>
   );
 }
