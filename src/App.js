@@ -13,11 +13,12 @@ function App() {
   function updateResults(){
     setResult(Number(firstNum) + Number(secondNum));
     setOperator(null);
-    setFirstNum("");
-    setSecondNum("");
+    // setFirstNum("");
+    // setSecondNum("");
   }
 
   function updateOperator(operation){
+    if(firstNum === "") setFirstNum("0");
     setOperator(operation);
   }
 
@@ -25,9 +26,9 @@ function App() {
     let newFirstNum = firstNum.concat(num.toString());
     let newSecondNum = secondNum.concat(num.toString());
     if (operator === null) {
-      setFirstNum(newFirstNum);    
+      setFirstNum((+newFirstNum).toString());    
     } else {
-      setSecondNum(newSecondNum);
+      setSecondNum((+newSecondNum).toString());
     }
   }
   
